@@ -27,15 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 48px;
-}
-
-.wheel {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
-    touch-action: none;
 }
 
 .wheelImage {
