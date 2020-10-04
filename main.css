@@ -28,6 +28,7 @@ body {
     flex-direction: column;
     margin-top: 48px;
     overflow: hidden;
+    touch-action: none;
 }
 
 .wheelImage {
