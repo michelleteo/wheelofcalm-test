@@ -14,6 +14,7 @@ function circle(id) {
 
     try {
         elInteraction.addEventListener('mousedown', down);
+        elInteraction.addEventListener('pointerdown', down);
     }
     catch (err) {
         console.log("Interaction not found");
@@ -24,6 +25,8 @@ function circle(id) {
         previousRad = offsetRad;
         window.addEventListener('mousemove', move);
         window.addEventListener('mouseup', up);
+        window.addEventListener('touchstart', move);
+        window.addEventListener('pointerup', up);
     }
 
     function move(event) {
@@ -37,6 +40,8 @@ function circle(id) {
     function up() {
         window.removeEventListener('mousemove', move);
         window.removeEventListener('mouseup', up);
+        window.removeEventListener('touchstart', move);
+        window.removeEventListener('pointerup', up);
     }
 
     function getRotation(event) {
