@@ -56,10 +56,8 @@ function circle(id) {
         var canvasY = 0;
 
         do {
-            totalOffsetX += currentElement.offsetLeft - window.pageXOffset;
-            totalOffsetY += currentElement.offsetTop - window.pageYOffset;
-            // totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
-            // totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
+            totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
+            totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
         }
         while (currentElement = currentElement.offsetParent)
 
