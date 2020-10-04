@@ -29,7 +29,6 @@ function circle(id) {
     }
 
     function move(event) {
-
         var newRad = getRotation(event);
         targetRad += (newRad - previousRad);
         previousRad = newRad;
@@ -44,10 +43,21 @@ function circle(id) {
     }
 
     function getRotation(event) {
-        var pos = mousePos(event, elInteraction);
-        var x = pos.x - elInteraction.clientWidth * .5;
-        var y = pos.y - elInteraction.clientHeight * .5;
-        return Math.atan2(y, x);
+        var rotation = event.rotation;
+        console.log(event.type);
+        if (!rotation) {
+            if (event.type == 'mousemove' || event.type == 'mousedown') {
+                return Math.atan2(event.pageY, event.pageX) * 180 / Math.PI;
+            }
+            return Math.atan2(event.touches[0].pageY, event.touches[0].pageX);
+        }
+
+        return rotation;
+
+        // var pos = mousePos(event, elInteraction);
+        // var x = pos.x - elInteraction.clientWidth * .5;
+        // var y = pos.y - elInteraction.clientHeight * .5;
+        // return Math.atan2(y, x);
     }
 
     function mousePos(event, currentElement) {
