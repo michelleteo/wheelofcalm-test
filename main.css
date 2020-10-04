@@ -12,14 +12,20 @@ body {
     position: relative;
 }
 
+.textSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.textColumn + .textColumn {
+    margin-top: 20px;
+}
+
 .wheelContainer {
     align-items: center;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-}
-
-.wheelContainer + .wheelContainer {
     margin-top: 64px;
 }
 
@@ -38,5 +44,14 @@ h1, p
     .root {
         padding-left: 24px;
         padding-right: 24px;
+    }
+
+    .textSection {
+        flex-direction: row;
+    }
+
+    .textColumn + .textColumn {
+        margin-left: 20px;
+        margin-top: 0;
     }
 }
