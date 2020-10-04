@@ -62,8 +62,13 @@ function circle(id) {
         }
         while (currentElement = currentElement.offsetParent)
 
-        canvasX = event.pageX - totalOffsetX;
-        canvasY = event.pageY - totalOffsetY;
+        if (event.type == 'mousemove') {
+            canvasX = event.pageX - totalOffsetX;
+            canvasY = event.pageY - totalOffsetY;
+        } else {
+            canvasX = event.touches[0].pageX - totalOffsetX;
+            canvasY = event.touches[0].pageY - totalOffsetY;
+        }
 
         return {
             x: canvasX,
