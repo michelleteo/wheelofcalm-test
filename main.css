@@ -24,16 +24,21 @@ body {
 
 .wheelContainer {
     align-items: center;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     margin-top: 48px;
+}
+
+.wheel {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
 .wheelImage {
     max-width: 700px;
-    touch-action: none;
     width: 100%;
 }
 
