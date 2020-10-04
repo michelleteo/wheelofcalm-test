@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Wheel of Calm</title>
         <link rel="stylesheet" href="main.css" type="text/css" />
     </head>
@@ -17,13 +18,15 @@
                     <p>This is the description of the second column.</p>
                 </div>
             </div>
-            <div id="wheel" class="wheelContainer">
+            <div class="wheelContainer">
+                <h2>First Wheel</h2>
                 <img src="pointer.png" />
-                <img src="wheel.png" class="wheelImage" draggable="false" />
+                <img id="wheel" src="wheel.png" class="wheelImage" draggable="false" />
             </div>
-            <div id="wheel2" class="wheelContainer">
+            <div class="wheelContainer">
+                <h2>Second Wheel</h2>
                 <img src="pointer.png" />
-                <img src="wheel_2.png" class="wheelImage" draggable="false" />
+                <img id="wheel2" src="wheel_2.png" class="wheelImage" draggable="false" />
             </div>
         </div>
         <script type="text/javascript" src="wheel.js"></script>
