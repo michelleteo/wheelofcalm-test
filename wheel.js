@@ -43,21 +43,10 @@ function circle(id) {
     }
 
     function getRotation(event) {
-        var rotation = event.rotation;
-        console.log(event.type);
-        if (!rotation) {
-            if (event.type == 'mousemove' || event.type == 'mousedown') {
-                return Math.atan2(event.pageY, event.pageX) * 180 / Math.PI;
-            }
-            return Math.atan2(event.touches[0].pageY, event.touches[0].pageX);
-        }
-
-        return rotation;
-
-        // var pos = mousePos(event, elInteraction);
-        // var x = pos.x - elInteraction.clientWidth * .5;
-        // var y = pos.y - elInteraction.clientHeight * .5;
-        // return Math.atan2(y, x);
+        var pos = mousePos(event, elInteraction);
+        var x = pos.x - elInteraction.clientWidth * .5;
+        var y = pos.y - elInteraction.clientHeight * .5;
+        return Math.atan2(y, x);
     }
 
     function mousePos(event, currentElement) {
@@ -72,7 +61,7 @@ function circle(id) {
         }
         while (currentElement = currentElement.offsetParent)
 
-        if (event.type == 'mousemove') {
+        if (event.type == 'mousemove' || event.type == 'mousedown') {
             canvasX = event.pageX - totalOffsetX;
             canvasY = event.pageY - totalOffsetY;
         } else {
