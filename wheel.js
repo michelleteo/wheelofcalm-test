@@ -5,7 +5,6 @@ function circle(id) {
 
     var elInteraction = document.getElementById(id);
     var elDisplay = elInteraction.getElementsByClassName('wheelImage')[0];
-    console.log(elDisplay);
 
     var offsetRad = null;
     var targetRad = 0;
@@ -14,7 +13,7 @@ function circle(id) {
 
     try {
         elInteraction.addEventListener('mousedown', down);
-        elInteraction.addEventListener('pointerdown', down);
+        elInteraction.addEventListener('touchstart', down);
     }
     catch (err) {
         console.log("Interaction not found");
@@ -25,8 +24,8 @@ function circle(id) {
         previousRad = offsetRad;
         window.addEventListener('mousemove', move);
         window.addEventListener('mouseup', up);
-        window.addEventListener('touchstart', move);
-        window.addEventListener('pointerup', up);
+        window.addEventListener('touchmove', move);
+        window.addEventListener('touchend', up);
     }
 
     function move(event) {
@@ -40,8 +39,8 @@ function circle(id) {
     function up() {
         window.removeEventListener('mousemove', move);
         window.removeEventListener('mouseup', up);
-        window.removeEventListener('touchstart', move);
-        window.removeEventListener('pointerup', up);
+        window.removeEventListener('touchmove', move);
+        window.removeEventListener('touchend', up);
     }
 
     function getRotation(event) {
