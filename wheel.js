@@ -2,13 +2,12 @@ circle('wheel');
 circle('wheel2');
 
 function circle(id) {
-
     var elInteraction = document.getElementById(id);
+    var elDisplay = elInteraction.getElementsByClassName('wheelImage')[0];
 
     var offsetRad = null;
     var targetRad = 0;
     var previousRad;
-
 
     try {
         elInteraction.addEventListener('mousedown', down);
@@ -31,7 +30,7 @@ function circle(id) {
         var newRad = getRotation(event);
         targetRad += (newRad - previousRad);
         previousRad = newRad;
-        elInteraction.style.transform = 'rotate(' + (targetRad / Math.PI * 180) + 'deg)';
+        elDisplay.style.transform = 'rotate(' + (targetRad / Math.PI * 180) + 'deg)';
     }
 
     function up() {
